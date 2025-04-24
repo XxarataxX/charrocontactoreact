@@ -8,6 +8,8 @@ const App = () => {
     nombre: '',
     email: '',
     telefono: '',
+    empresa: '',
+    cargo: ''
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ text: '', show: false, success: false });
@@ -43,8 +45,9 @@ const App = () => {
         nombre: formData.nombre,
         email: formData.email,
         telefono: formData.telefono,
+        empresa: formData.empresa,
+        cargo: formData.cargo
       });
-
       setMessage({
         text: '¡Charro registrado con éxito!',
         show: true,
@@ -77,8 +80,13 @@ const App = () => {
       />
       
       <div className="form-container">
-        <div className="sombrero-decoration">🎩</div>
-        <h1>Registro</h1>
+      <img 
+        src={require('./muncocharro.png')} 
+        alt="Sombrero charro" 
+        className="sombrero-image"
+      />
+
+        <h2>Registro</h2>
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -117,6 +125,30 @@ const App = () => {
               onChange={handleChange}
               required
               placeholder="Ej. 55 1234 5678"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="empresa">Empresa:</label>
+            <input
+              type="text"
+              id="empresa"
+              name="empresa"
+              value={formData.empresa}
+              onChange={handleChange}
+              placeholder="Ej. Charros Mexicanos S.A."
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="cargo">Cargo:</label>
+            <input
+              type="text"
+              id="cargo"
+              name="cargo"
+              value={formData.cargo}
+              onChange={handleChange}
+              placeholder="Ej. Gerente de Ventas"
             />
           </div>
 
