@@ -1,0 +1,62 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: var(--charro-light);
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border: 3px solid var(--charro-gold);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+  
+  .modal-title {
+    color: var(--charro-red);
+    font-family: 'Cinzel Decorative', cursive;
+    margin-top: 0;
+    font-size: 1.8rem;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: var(--charro-red);
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .qr-container {
+    margin: 20px auto;
+    padding: 10px;
+    background: white;
+    border: 2px solid var(--charro-gold);
+    border-radius: 8px;
+    max-width: 200px;
+  }
+  
+  .modal-uuid {
+    word-break: break-all;
+    font-size: 0.8rem;
+    margin: 10px 0;
+  }
+  
+  .modal-footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--charro-dark);
+  }

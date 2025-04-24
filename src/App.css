@@ -1,38 +1,154 @@
-.App {
+:root {
+  --charro-red: #9E1F1F;
+  --charro-gold: #D4AF37;
+  --charro-dark: #2A2118;
+  --charro-light: #F5E7D1;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.6;
+  color: var(--charro-dark);
+  background-color: var(--charro-light);
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-container {
+  background-color: rgba(245, 231, 209, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid var(--charro-gold);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(to right, var(--charro-red), var(--charro-gold), var(--charro-red));
+}
+
+h1 {
+  color: var(--charro-red);
   text-align: center;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 2.5rem;
+  margin-top: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+  border-bottom: 3px double var(--charro-gold);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sombrero-decoration {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-group {
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--charro-red);
+  font-size: 1.1rem;
+}
+
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid var(--charro-gold);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--charro-red);
+  box-shadow: 0 0 0 3px rgba(158, 31, 31, 0.2);
+}
+
+button {
+  background: linear-gradient(to bottom, var(--charro-red), #7E1818);
   color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  width: 100%;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #7E1818;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background: linear-gradient(to bottom, #B82626, var(--charro-red));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.response-message {
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  border: 2px solid;
+}
+
+.success {
+  background-color: rgba(212, 237, 218, 0.9);
+  color: #155724;
+  border-color: #c3e6cb;
+}
+
+.error {
+  background-color: rgba(248, 215, 218, 0.9);
+  color: #721c24;
+  border-color: #f5c6cb;
 }
